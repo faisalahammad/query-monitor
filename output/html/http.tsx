@@ -115,7 +115,7 @@ export const HTTP = ( { data }: PanelProps<DataTypes['http']> ) => {
 									{ sprintf(
 										/* translators: %s: Redirect target URL */
 										__( 'Redirected to: %s', 'query-monitor' ),
-										row.redirected_to
+										row.redirected_to ?? ''
 									) }
 								</Warning>
 							</div>
@@ -137,7 +137,7 @@ export const HTTP = ( { data }: PanelProps<DataTypes['http']> ) => {
 								{ sprintf(
 									/* translators: %s: Error message text */
 									__( 'Error: %s', 'query-monitor' ),
-									Utils.getErrorMessage( row.result )
+									Utils.getErrorMessage( row.result ) ?? ''
 								) }
 							</Warning>
 						);

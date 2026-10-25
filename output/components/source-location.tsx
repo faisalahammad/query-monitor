@@ -63,8 +63,9 @@ export const SourceLocation = ( { text, file, line = 0, isFileName = false, expa
 		);
 	}
 
+	// The format comes from settings so its placeholders can't be inferred.
 	const output = sprintf(
-		format,
+		format as '%1$s%2$d',
 		encodeURIComponent( mappedFile ),
 		linkLine
 	);
